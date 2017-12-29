@@ -3,6 +3,7 @@ sortlib.py
 
 Sorting algorithms implemented in Python.
 '''
+import random
 
 
 def bubble_sort(seq):
@@ -44,5 +45,16 @@ def merge_sort(seq):
     return merge_lists(left, right)
 
 
+def insertion_sort(seq):
+    for a in range(0, len(seq)):
+        for b in range(0, a):
+            if seq[b] > seq[a]:
+                swap = seq[a]
+                seq[a] = seq[b]
+                seq[b] = swap
+    return seq
+
+
 if __name__ == '__main__':
-    pass
+    num = [random.randrange(50000) for i in range(10000)]
+    print(insertion_sort(num))
