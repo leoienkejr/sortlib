@@ -54,5 +54,21 @@ def insertion_sort(seq):
     return seq
 
 
+def selection_sort(seq):
+    def find_smallest_index(seq):
+        smallest = 0
+        for i in range(0, len(seq)):
+            if seq[i] < seq[smallest]:
+                smallest = i
+        return smallest
+        return find_smallest_index(seq)
+    sorted_seq = []
+    while len(seq) > 0:
+        index = find_smallest_index(seq)
+        sorted_seq.append(seq[index])
+        del seq[index]
+    return sorted_seq
+
+
 if __name__ == '__main__':
     pass
