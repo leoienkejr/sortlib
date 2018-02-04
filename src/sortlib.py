@@ -4,6 +4,8 @@ sortlib.py
 Sorting algorithms implemented in Python.
 '''
 
+import random
+
 
 def bubble_sort(seq):
     repeat = True
@@ -68,6 +70,21 @@ def selection_sort(seq):
         sorted_seq.append(seq[index])
         del seq[index]
     return sorted_seq
+
+
+def quicksort(arr):
+    if len(arr) <= 1:
+        return arr
+    pivot = arr.pop(random.randrange(0, len(arr)))
+    lesser = []
+    greater = []
+    for elem in arr:
+        if elem < pivot:
+            lesser.append(elem)
+        if elem > pivot:
+            greater.append(elem)
+    lesser.append(pivot)
+    return quicksort(lesser) + quicksort(greater)
 
 
 if __name__ == '__main__':
