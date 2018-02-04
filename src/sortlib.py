@@ -81,7 +81,7 @@ def quicksort(arr):
     greater = []
     for elem in arr:
         if elem == pivot:
-            equal.append(pivot)
+            equal.append(elem)
         if elem < pivot:
             lesser.append(elem)
         if elem > pivot:
