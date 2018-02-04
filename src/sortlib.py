@@ -77,14 +77,16 @@ def quicksort(arr):
         return arr
     pivot = arr[random.randrange(0, len(arr))]
     lesser = []
+    equal = []
     greater = []
     for elem in arr:
+        if elem == pivot:
+            equal.append(pivot)
         if elem < pivot:
             lesser.append(elem)
         if elem > pivot:
             greater.append(elem)
-    lesser.append(pivot)
-    return quicksort(lesser) + quicksort(greater)
+    return quicksort(lesser) + equal + quicksort(greater)
 
 
 if __name__ == '__main__':
