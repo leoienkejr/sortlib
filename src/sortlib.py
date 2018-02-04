@@ -73,7 +73,7 @@ def selection_sort(seq):
 
 
 def quicksort(arr):
-    if len(arr) <= 1:
+    if len(arr) < 2:
         return arr
     pivot = arr[random.randrange(0, len(arr))]
     lesser = []
